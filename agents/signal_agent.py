@@ -1,8 +1,14 @@
 def analyze_signal(data):
+    if data is None or data.empty or len(data) < 2:
+        return "Neutral"
+
     close = data["Close"]
 
-    last = float(close.iloc[-1])
-    prev = float(close.iloc[-2])
+    try:
+        last = float(close.iloc[-1])
+        prev = float(close.iloc[-2])
+    except:
+        return "Neutral"
 
     change = ((last - prev) / prev) * 100
 
@@ -15,10 +21,16 @@ def analyze_signal(data):
 
 
 def volume_signal(data):
+    if data is None or data.empty or len(data) < 20:
+        return "Normal Volume"
+
     volume = data["Volume"]
 
-    avg_vol = float(volume.tail(20).mean())
-    today_vol = float(volume.iloc[-1])
+    try:
+        avg_vol = float(volume.tail(20).mean())
+        today_vol = float(volume.iloc[-1])
+    except:
+        return "Normal Volume"
 
     if today_vol > (1.5 * avg_vol):
         return "High Volume"
@@ -27,8 +39,14 @@ def volume_signal(data):
 
 
 def breakout_signal(data):
-    high_20 = float(data["High"].tail(20).max())
-    last_close = float(data["Close"].iloc[-1])
+    if data is None or data.empty or len(data) < 20:
+        return "No Breakout"
+
+    try:
+        high_20 = float(data["High"].tail(20).max())
+        last_close = float(data["Close"].iloc[-1])
+    except:
+        return "No Breakout"
 
     if last_close > high_20:
         return "Breakout"
