@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+}
+
+.app {
+  text-align: center;
+  margin-top: 50px;
+}
+
+input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: #22c55e;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #16a34a;
+}
+
+.card {
+  margin-top: 30px;
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 15px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.confidence {
+  margin-top: 10px;
+}
+
+.bar {
+  width: 100%;
+  height: 10px;
+  background: #334155;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.fill {
+  height: 100%;
+  background: #22c55e;
+  border-radius: 10px;
+}
+
+.error {
+  color: red;
+  margin-top: 20px;
+}
