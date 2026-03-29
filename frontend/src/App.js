@@ -13,7 +13,7 @@ function App() {
     setResult(null);
 
     try {
-      const res = await fetch(`http://127.0.0.1:8000/analyze/${stock}`);
+      const res = await fetch(`https://alpharadar-ai-intelligent-market-signal.onrender.com/analyze/${stock}`);
       const data = await res.json();
       console.log(data); // 🔥 debug
 
